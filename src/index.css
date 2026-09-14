@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+html,
+body {
+  background-color: #0B0F19;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+:root {
+  --gradient-primary: linear-gradient(135deg, #6366F1 0%, #7C3AED 50%, #A78BFA 100%);
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* TEKMEN subtle cinematic glow: White Light Core + Subtle Violet Aura */
+  .glow-title-violet {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.22))
+            drop-shadow(0 0 24px rgba(167, 139, 250, 0.40))
+            drop-shadow(0 0 45px rgba(124, 58, 237, 0.25));
+  }
+  /* TEKMEN luminous hero heading: Violet Core + Soft White Light + Subtle Violet Aura + Dark Contrast Separation */
+  .hero-heading-violet {
+    color: #A78BFA;
+    display: inline-block;
+    text-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.55),
+      0 0 12px rgba(255, 255, 255, 0.22),
+      0 0 24px rgba(167, 139, 250, 0.50),
+      0 0 45px rgba(124, 58, 237, 0.30);
+  }
+  .glow-text-subtle {
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.20),
+      0 0 20px rgba(167, 139, 250, 0.35),
+      0 0 35px rgba(124, 58, 237, 0.20);
+  }
+  .neon-text {
+    color: #C4B5FD;
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.25),
+      0 0 18px rgba(167, 139, 250, 0.40),
+      0 0 36px rgba(124, 58, 237, 0.25);
+  }
+  .neon-cyan {
+    color: #28B6FF;
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.25),
+      0 0 20px rgba(40, 182, 255, 0.45);
+  }
+  .glow-icon {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.40)) drop-shadow(0 0 12px rgba(124, 58, 237, 0.45));
+  }
+  .luminous-star {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.60))
+            drop-shadow(0 0 10px rgba(167, 139, 250, 0.55))
+            drop-shadow(0 0 18px rgba(124, 58, 237, 0.35));
+  }
+  .glow-badge {
+    box-shadow: 0 0 14px -2px rgba(124, 58, 237, 0.40), 0 0 6px 0px rgba(255, 255, 255, 0.10), inset 0 0 8px -2px rgba(196, 181, 253, 0.20);
+  }
+  .shadow-glow {
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.35), 0 0 80px rgba(99, 102, 241, 0.20);
+  }
+  .shadow-glow-soft {
+    box-shadow: 0 10px 40px -10px rgba(124, 58, 237, 0.35);
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(124, 58, 237, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124, 58, 237, 0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
